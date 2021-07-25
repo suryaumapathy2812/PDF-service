@@ -1,0 +1,17 @@
+{
+  "name": "abobe-pdf-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.ts",
+  "type": "module",
+  "scripts": {
+    "watch": "tsc --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@adobe/pdfservices-node-sdk": "^2.0.0",
+    "@types/node": "^16.4.2"
+  }
+}
