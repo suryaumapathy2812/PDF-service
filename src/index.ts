@@ -6,6 +6,44 @@ import { Readable } from 'stream';
 // import { Readable } from 'node:stream';
 
 export class PdfService {
+
+    credentials() {
+        return PDFServicesSdk.Credentials
+            .serviceAccountCredentialsBuilder()
+            .fromFile('pdfservices-api-credentials.json')
+            .build();
+    }
+
+    /**
+     * Create PDFs from a variety of formats, including static and dynamic HTML; Microsoft Word, PowerPoint, and Excel; as well as text, image, and, Zip
+     * 
+     * Supported file types are HTML, DOC, DOCX, PPT, PPTX, XLS, XLSX, TXT, RTF, BMP, JPEG, GIF, TIFF, PNG
+     * 
+     * @param  {string} fileName
+     */
+    convertToPdf(fileName: string = "createPDF") {
+        try {
+            // Initial setup, create credentials instance.
+            const credentials = this.credentials();
+
+            // Create an ExecutionContext using credentials
+            const executionContext = PDFServicesSdk.ExecutionContext.create(credentials);
+            const createPdfOperation = PDFServicesSdk.CreatePDF.Operation.createNew();
+
+            // Set operation input from a source file.
+            const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/createPDFInput.docx');
+            createPdfOperation.setInput(input);
+
+            // Execute the operation and Save the result to the specified location.
+            createPdfOperation.execute(executionContext)
+                .then((result: any) => result.saveAsFile(`output/${fileName}.pdf`))
+        } catch (err) {
+            console.log(err);
+            throw new Error("Failed to Convert into PDF")
+        }
+    }
+
+
     /**
      * This method merge JSON data with Microsoft Office DOCX template file (buffer) 
      * to output a PDF file
@@ -18,10 +56,7 @@ export class PdfService {
         try {
 
             // Initial setup, create credentials instance.
-            const credentials = PDFServicesSdk.Credentials
-                .serviceAccountCredentialsBuilder()
-                .fromFile('pdfservices-api-credentials.json')
-                .build();
+            const credentials = this.credentials();
 
             // Setup input data for the document merge process
             const jsonDataForMerge = data;
