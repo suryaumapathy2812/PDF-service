@@ -2,8 +2,13 @@
   "name": "abobe-pdf-service",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.ts",
   "type": "module",
+  "main": "./dist/esm/index.js",
+  "types":"./dist/esm/index.d.ts",
+  "module":"./dist/esm/index.js",
+  "files":[
+  "./dist"
+  ],
   "scripts": {
     "watch": "tsc --watch"
   },
