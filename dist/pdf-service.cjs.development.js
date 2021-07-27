@@ -121,5 +121,5 @@ var PdfService = /*#__PURE__*/function () {
   return PdfService;
 }();
 
-exports.PdfService = PdfService;
+exports.default = PdfService;
 //# sourceMappingURL=pdf-service.cjs.development.js.map
