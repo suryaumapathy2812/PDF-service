@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable class-methods-use-this */
 const PDFServicesSdk = require("@adobe/pdfservices-node-sdk");
 import fs from 'fs';
 import { Readable } from 'stream';
