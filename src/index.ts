@@ -3,7 +3,7 @@ import fs from 'fs';
 import { Readable } from 'stream';
 // import { Readable } from 'node:stream';
 
-export class PdfService {
+export default class PdfService {
 
     credentials() {
         return PDFServicesSdk.Credentials

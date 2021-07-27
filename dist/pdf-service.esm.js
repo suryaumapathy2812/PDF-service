@@ -115,5 +115,5 @@ var PdfService = /*#__PURE__*/function () {
   return PdfService;
 }();
 
-export { PdfService };
+export default PdfService;
 //# sourceMappingURL=pdf-service.esm.js.map

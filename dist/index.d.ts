@@ -1,6 +1,6 @@
 /// <reference types="node" />
 import { Readable } from 'stream';
-export declare class PdfService {
+export default class PdfService {
     credentials(): any;
     /**
      * Create PDFs from a variety of formats, including static and dynamic HTML; Microsoft Word, PowerPoint, and Excel; as well as text, image, and, Zip
