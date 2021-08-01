@@ -15,7 +15,6 @@ jobs:
           # Defaults to the user or organization that owns the workflow file
           scope: '@suryaumapathy2812'
       # Publish to GitHub Packages
-      - run: npm run build
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
