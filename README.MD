@@ -1,5 +1,7 @@
 # PDF SERVICE
 
+Note:- This is Package is written on top of ADOBE's PDF Service SDK
+
 - Generate private Key and credentials json from the [Here](https://www.adobe.io/apis/documentcloud/dcsdk/gettingstarted.html?ref=getStartedWithServicesSDK).
 - paste both the file in root dir of your project.
 
